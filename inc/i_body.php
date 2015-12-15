@@ -8,33 +8,30 @@ function showNavBar($links) {
     <!-- BARRA DE NAVEGACAO -->
     <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
 
-    <div class="container">        
         <ul class="nav nav-pills">
             <?php
             $n=0;
             foreach ($links as $value) {
             ?>    
-                <li><a href="./index.php?op=<?php echo $n++; ?>"><?php echo $value; ?></a></li>
+                <li><a href="index.php?op=<?php echo $n++; ?>"><?php echo $value; ?></a></li>
             <?php
             }
             ?>                    
         </ul>           
-    </div>
+    
     <?php
 }
 
 function showRodape($msg) {
     ?>
-    <div class="container">
-        <pre class='prettyprint linenums lang-rb'><?php echo $msg; ?> - <?php echo date('d/m/Y'); ?></pre>
-    </div>
+    <pre class='prettyprint linenums lang-rb'><?php echo $msg; ?> - <?php echo date('d/m/Y'); ?></pre>
     <?php
 }    
 
 function showContato() {
     ?>
     <div class="container">
-        <form class="form-horizontal" role="form" method="POST" action="index.php">
+        <form class="form-horizontal" role="form" method="POST" action="contato.php">
             <div class="form-group">
                 <label for="name">Nome</label>
                 <div class="input-group col-sm-6">
@@ -64,14 +61,13 @@ function showContato() {
             </div>  
 
             <div class="form-group">
-                <div class="col-sm-6">
-                    <input type="submit" id="submitted" name="submitted" class="btn btn-primary">
-                </div>
+                 <input type="submit" id="submitted" name="submitted" class="btn btn-primary">
             </div> 
         </form>
     </div>
     <?php
 }    
+
 
 
 

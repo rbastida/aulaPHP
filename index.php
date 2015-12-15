@@ -1,52 +1,21 @@
 <?php
 require_once dirname(__FILE__)."/inc/i_top.php";
-//require_once './inc/conexao.php';
 
-if ($_POST['submitted']) {
+    $op       = $_GET['op'];
 
-    $nome     = $_POST['nome'];
-    $assunto  = $_POST['assunto'];
-    $email    = $_POST['email'];
-    $mensagem = $_POST['mensagem'];
+    // ECHO 'op='.$op.'<br>';
     
-    echo '<b>Dados Enviados com Sucesso:<br><br></b>';
+    switch ($op) {
     
-    if (isset($nome)) {
-        echo 'Campo Nome: &nbsp;'.$nome.'<br>';
+        case '0': header("Location: home.php");     break;
+        case '1': header("Location: empresa.php");  break;
+        case '2': header("Location: produtos.php"); break;
+        case '3': header("Location: servicos.php"); break;
+        case '4': header("Location: contato.php");  break;      
+            
     }
-    
-    if (isset($assunto)) {
-        echo 'Campo Assunto:  &nbsp;'.$assunto.'<br>';
-    }
-    
-    if (isset($email)) {
-        echo 'Campo Email:  &nbsp;'.$email.'<br>';
-    }
-    
-    if (isset($mensagem)) {
-        echo 'Campo Mensagem:  &nbsp;'.$mensagem.'<br>';
-    }
-    
-//    echo 'Dados retornados pelo Form foram:<br>';
-//    echo 'Dados retornados pelo Form foram:<br>';
-//    echo 'Dados retornados pelo Form foram:<br>';
-//    echo 'Dados retornados pelo Form foram:<br>';
-    
-    
-} else {
     
     $links = array('Home', 'Empresa', 'Produtos', 'Serviços', 'Contato');
     showNavBar($links);
-    showContato();
     $msg = 'Todos os direitos reservados';
-    showRodape($msg); 
-    
-}
-    
-
-
-  
-
-
-
-
+    showRodape($msg);
